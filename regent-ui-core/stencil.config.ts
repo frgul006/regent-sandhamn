@@ -9,7 +9,7 @@ export const config: Config = {
   taskQueue: 'async',
   plugins: [
     sass({
-      injectGlobalPaths: ['src/globals/variables.scss'],
+      injectGlobalPaths: ['src/globals/reset.scss', 'src/globals/variables.scss'],
     }),
   ],
   outputTargets: [
