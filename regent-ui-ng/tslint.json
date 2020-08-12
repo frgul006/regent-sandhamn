@@ -1,0 +1,12 @@
+{
+  "extends": ["tslint:recommended", "tslint-angular", "tslint-config-prettier"],
+  "rules": {
+    "directive-selector": [true, "attribute", "regent", "camelCase"],
+    "component-selector": [true, "element", "regent", "kebab-case"],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
+    "interface-name": false,
+    "max-classes-per-file": true,
+    "ordered-imports": [true]
+  },
+  "rulesDirectory": ["codelyzer"]
+}

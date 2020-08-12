@@ -10,7 +10,7 @@ export const config: Config = {
   outputTargets: [
     angularOutputTarget({
       componentCorePackage: '@regent/ui-core',
-      directivesProxyFile: '../regent-ui-angular/src/directives/proxies.ts',
+      directivesProxyFile: '../regent-ui-ng/src/lib/directives/proxies.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
     }),
     {
