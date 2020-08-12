@@ -7,8 +7,21 @@
 
     <script type="module" src="/build/regent.esm.js"></script>
     <script nomodule src="/build/regent.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="/build/regent.css" />
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <regent-button>Default</regent-button>
+    <regent-button type="button" button-type="button" color="primary">This is a primary button</regent-button>
+    <regent-button type="button" button-type="button" color="secondary">This is a secondary button</regent-button>
+    <regent-button type="button" button-type="submit">This is a submit button</regent-button>
+    <regent-button type="link" href="https://www.google.com" color="primary">This is a primary link</regent-button>
+    <regent-button type="link" href="https://www.google.com" color="secondary">This is a secondary link</regent-button>
+    <script>
+      const buttonElement = document.querySelector('regent-button');
+      buttonElement.addEventListener('click', event => {
+        /* your listener */
+      });
+    </script>
   </body>
 </html>

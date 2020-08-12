@@ -1,0 +1,71 @@
+:host {
+  display: inline-flex;
+}
+
+button,
+a {
+  width: 100%;
+  display: block;
+  border: 1px solid transparent;
+  padding: 0;
+  padding: 1rem;
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:focus,
+a:focus {
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+}
+
+:host(.regent-button--primary) button,
+:host(.regent-button--primary) a {
+  background-color: var(--regent-primary-color);
+  border-color: var(--regent-primary-color-accent);
+  color: var(--regent-text-color-inverted);
+}
+
+:host(.regent-button--primary) button:hover,
+:host(.regent-button--primary) button:focus,
+:host(.regent-button--primary) button:active,
+:host(.regent-button--primary) a:hover,
+:host(.regent-button--primary) a:focus,
+:host(.regent-button--primary) a:active {
+  background-color: var(--regent-primary-color-highlight);
+  border-color: var(--regent-primary-color-highlight-accent);
+}
+
+:host(.regent-button--primary) button:focus,
+:host(.regent-button--primary) a:focus {
+  outline-color: var(--regent-primary-color-highlight-accent);
+}
+
+:host(.regent-button--secondary) button,
+:host(.regent-button--secondary) a {
+  background-color: var(--regent-secondary-color);
+  border-color: var(--regent-secondary-color-accent);
+  color: var(--regent-text-color-inverted);
+}
+
+:host(.regent-button--secondary) button:hover,
+:host(.regent-button--secondary) button:focus,
+:host(.regent-button--secondary) button:active,
+:host(.regent-button--secondary) a:hover,
+:host(.regent-button--secondary) a:focus,
+:host(.regent-button--secondary) a:active {
+  background-color: var(--regent-secondary-color-highlight);
+  border-color: var(--regent-secondary-color-highlight-accent);
+}
+
+:host(.regent-button--secondary) button:focus,
+:host(.regent-button--secondary) a:focus {
+  outline-color: var(--regent-secondary-color-highlight-accent);
+}

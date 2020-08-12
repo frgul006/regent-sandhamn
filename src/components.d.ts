@@ -20,6 +20,24 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface RegentButton {
+        /**
+          * Optional parameter. Used to change the type of the internal button if `type` is set to 'BUTTON'
+         */
+        "buttonType": 'button' | 'submit';
+        /**
+          * Color of the button
+         */
+        "color": 'primary' | 'secondary';
+        /**
+          * Optional parameter. Specifies the URL of the page the link goes to if `type` is set to 'LINK'
+         */
+        "href": string;
+        /**
+          * Should this behave like a link or a button? If 'BUTTON' this will render an internal `<button>`-element
+         */
+        "type": 'button' | 'link';
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +46,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLRegentButtonElement extends Components.RegentButton, HTMLStencilElement {
+    }
+    var HTMLRegentButtonElement: {
+        prototype: HTMLRegentButtonElement;
+        new (): HTMLRegentButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "regent-button": HTMLRegentButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +72,27 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface RegentButton {
+        /**
+          * Optional parameter. Used to change the type of the internal button if `type` is set to 'BUTTON'
+         */
+        "buttonType"?: 'button' | 'submit';
+        /**
+          * Color of the button
+         */
+        "color"?: 'primary' | 'secondary';
+        /**
+          * Optional parameter. Specifies the URL of the page the link goes to if `type` is set to 'LINK'
+         */
+        "href"?: string;
+        /**
+          * Should this behave like a link or a button? If 'BUTTON' this will render an internal `<button>`-element
+         */
+        "type"?: 'button' | 'link';
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "regent-button": RegentButton;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +100,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "regent-button": LocalJSX.RegentButton & JSXBase.HTMLAttributes<HTMLRegentButtonElement>;
         }
     }
 }
