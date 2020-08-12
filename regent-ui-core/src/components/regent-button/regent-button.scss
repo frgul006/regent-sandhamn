@@ -28,9 +28,9 @@ a:focus {
 
 :host(.regent-button--primary) button,
 :host(.regent-button--primary) a {
-  background-color: var(--regent-primary-color);
-  border-color: var(--regent-primary-color-accent);
-  color: var(--regent-text-color-inverted);
+  background-color: $primary-color;
+  border-color: $primary-color-accent;
+  color: $text-color-inverted;
 }
 
 :host(.regent-button--primary) button:hover,
@@ -39,20 +39,20 @@ a:focus {
 :host(.regent-button--primary) a:hover,
 :host(.regent-button--primary) a:focus,
 :host(.regent-button--primary) a:active {
-  background-color: var(--regent-primary-color-highlight);
-  border-color: var(--regent-primary-color-highlight-accent);
+  background-color: $primary-color-highlight;
+  border-color: $primary-color-highlight-accent;
 }
 
 :host(.regent-button--primary) button:focus,
 :host(.regent-button--primary) a:focus {
-  outline-color: var(--regent-primary-color-highlight-accent);
+  outline-color: $primary-color-highlight-accent;
 }
 
 :host(.regent-button--secondary) button,
 :host(.regent-button--secondary) a {
-  background-color: var(--regent-secondary-color);
-  border-color: var(--regent-secondary-color-accent);
-  color: var(--regent-text-color-inverted);
+  background-color: $secondary-color;
+  border-color: $secondary-color-accent;
+  color: $text-color-inverted;
 }
 
 :host(.regent-button--secondary) button:hover,
@@ -61,11 +61,11 @@ a:focus {
 :host(.regent-button--secondary) a:hover,
 :host(.regent-button--secondary) a:focus,
 :host(.regent-button--secondary) a:active {
-  background-color: var(--regent-secondary-color-highlight);
-  border-color: var(--regent-secondary-color-highlight-accent);
+  background-color: $secondary-color-highlight;
+  border-color: $secondary-color-highlight-accent;
 }
 
 :host(.regent-button--secondary) button:focus,
 :host(.regent-button--secondary) a:focus {
-  outline-color: var(--regent-secondary-color-highlight-accent);
+  outline-color: $secondary-color-highlight-accent;
 }

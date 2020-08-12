@@ -1,12 +1,17 @@
 import { angularOutputTarget, ValueAccessorConfig } from '@stencil/angular-output-target';
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 
 export const config: Config = {
   namespace: 'regent',
   taskQueue: 'async',
-  globalStyle: 'src/global/variables.css',
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/globals/variables.scss'],
+    }),
+  ],
   outputTargets: [
     angularOutputTarget({
       componentCorePackage: '@regent/ui-core',

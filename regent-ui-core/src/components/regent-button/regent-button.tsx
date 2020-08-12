@@ -2,7 +2,7 @@ import { Component, h, Host, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'regent-button',
-  styleUrl: 'regent-button.css',
+  styleUrl: 'regent-button.scss',
   shadow: true,
 })
 export class RegentButton {
