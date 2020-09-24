@@ -4,47 +4,54 @@ class RegentCard extends HTMLElement {
     super();
 
     // write element functionality in here
-    // const templateEl = document.createElement("template");
-    // templateEl.setAttribute("id", "regent-card-template");
+    const shadow = this.attachShadow({ mode: "open" });
 
-    // const wrapperEl = document.createElement("div");
-    // wrapperEl.setAttribute("class", "wrapper");
+    // Create some CSS to apply
+    const styleEl = document.createElement("style");
+    styleEl.textContent =
+      ".wrapper { background-color: #333; color: #fff; padding: 1rem; border-radius: 3px; }";
+    shadow.appendChild(styleEl);
 
-    // const headerEl = document.createElement("div");
-    // headerEl.setAttribute("class", "header");
+    const templateEl = document.createElement("template");
+    templateEl.setAttribute("id", "regent-card-template");
 
-    // const headerSlotEl = document.createElement("slot");
-    // headerSlotEl.setAttribute("name", "regent-card-header");
+    const wrapperEl = document.createElement("div");
+    wrapperEl.setAttribute("class", "wrapper");
 
-    // const headerSlotDefaultEl = document.createElement("h1");
-    // headerSlotDefaultEl.textContent = "Default header";
+    const headerEl = document.createElement("div");
+    headerEl.setAttribute("class", "header");
 
-    // const contentEl = document.createElement("div");
-    // contentEl.setAttribute("class", "content");
+    const headerSlotEl = document.createElement("slot");
+    headerSlotEl.setAttribute("name", "regent-card-header");
 
-    // const contentSlotEl = document.createElement("slot");
-    // contentSlotEl.setAttribute("name", "regent-card-content");
+    const headerSlotDefaultEl = document.createElement("h1");
+    headerSlotDefaultEl.textContent = "Default header";
 
-    // const contentSlotDefaultEl = document.createElement("p");
-    // contentSlotDefaultEl.textContent = "Default content";
+    const contentEl = document.createElement("div");
+    contentEl.setAttribute("class", "content");
 
-    // headerSlotEl.appendChild(headerSlotDefaultEl);
-    // headerEl.appendChild(headerSlotEl);
-    // wrapperEl.appendChild(headerEl);
+    const contentSlotEl = document.createElement("slot");
+    contentSlotEl.setAttribute("name", "regent-card-content");
 
-    // contentSlotEl.appendChild(contentSlotDefaultEl);
-    // contentEl.appendChild(contentSlotEl);
-    // wrapperEl.appendChild(contentEl);
+    const contentSlotDefaultEl = document.createElement("p");
+    contentSlotDefaultEl.textContent = "Default content";
 
-    // templateEl.appendChild(wrapperEl);
+    headerSlotEl.appendChild(headerSlotDefaultEl);
+    headerEl.appendChild(headerSlotEl);
+    wrapperEl.appendChild(headerEl);
 
-    // document.body.appendChild(templateEl);
-    let template = document.getElementById("regent-card-template");
-    let templateContent = template.content;
+    contentSlotEl.appendChild(contentSlotDefaultEl);
+    contentEl.appendChild(contentSlotEl);
+    wrapperEl.appendChild(contentEl);
 
-    const shadowRoot = this.attachShadow({ mode: "open" }).appendChild(
-      templateContent.cloneNode(true)
-    );
+    templateEl.appendChild(wrapperEl);
+
+    this.append(templateEl);
+
+    const template = document.getElementById("regent-card-template");
+    const templateContent = template.content;
+
+    shadow.appendChild(templateContent.cloneNode(true));
   }
 }
 

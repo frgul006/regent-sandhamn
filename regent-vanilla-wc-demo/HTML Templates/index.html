@@ -5,15 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Templates</title>
-    <style>
-        .wrapper {
-            background-color: red;
-        }
-    </style>
 </head>
 
 <body>
-    <template id="regent-card-template">
+    <!-- <template id="regent-card-template">
         <div class="wrapper">
             <div class="header">
                 <slot name="regent-card-header">
@@ -26,14 +21,12 @@
                 </slot>
             </div>
         </div>
-    </template>
+    </template> -->
 
     <regent-card>
-        <span slot="regent-card-header">Let's have some different text!</span>
+        <h1 slot="regent-card-header">Let's have some different text!</h1>
+        <p slot="regent-card-content">Another content</p>
     </regent-card>
-    <div class="wrapper">
-        This is a wrapper
-    </div>
     <script src="main.js"></script>
 </body>
 
